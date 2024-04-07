@@ -42,23 +42,45 @@
                 </td>
 
                 <td>
-                    <title>Profile Page</title>
-
-                    <h1>Jose Annunziato's Profile</h1>
-                    <hr>
-
-                    <h2>Jose Annunziato</h2><button><a href="/Kanbas/Account/Profile/Edit/index.html">Edit
-                            Profile</a></button>
-
-                    <h3>Contact</h3>
-                    <p>No registered services, you can add some on the <a href="settings_page.html">settings page</a>.
-                    </p>
-
-                    <h3>Biography</h3>
-                    <p>Faculty, Software Engineer, AI, Space, and renewables enthusiast.</p>
-
-                    <h3>Links</h3>
-                    <a href="https://www.youtube.com">YouTube</a>
+                    <h1> Jose Annunziato </h1>
+                    <label for="name">Name:*</label>
+                    <input type="text" id="name" name="name" value="Jose Annunziato" required>
+                    
+                    <label for="pronouns">Pronouns:</label>
+                    <select id="pronouns" name="pronouns">
+                        <option value="none" selected>None</option>
+                    </select>
+                    
+                    <label for="title">Title:</label>
+                    <input type="text" id="title" name="title">
+                    
+                    <h2>Contact</h2>
+                    <p>No registered services, you can add some on the <a href="settings_page.html">settings page</a>.</p>
+                    
+                    <h2>Biography</h2>
+                    <label>Faculty, Software Engineer, AI, Space, and renewables enthusiast.</label></br>
+                    <textarea cols="40" rows="3" id="biography"
+                        name="biography">Faculty, Software Engineer, AI, Space, and renewables enthusiast.</textarea>
+                    
+                    <h2>Links</h2>
+                    <ul>
+                        <li><a href="https://www.youtube.com">YouTube</a> Links to an external site.</li>
+                    </ul>
+                    
+                    <h3>Add another link</h3>
+                    <label for="link-title">Title</label>
+                    <input type="text" id="link-title" name="link-title" value="YouTube">
+                    
+                    <label for="link-url">URL</label>
+                    <input type="url" id="link-url" name="link-url" value="https://www.youtube.com">
+                    <button type="button">Remove</button></br>
+                    
+                    <button type="button">Add another link</button></br>
+                    <button type="submit"><a href="/Kanbas/Account/Profile/screen.html">Save Profile</a></button></br>
+                    <button type="button">Cancel</button>
+                    
+                    <button type="button">Edit Profile</button>
+                    <button type="button"><a href="/Kanbas/Account/Profile/screen.html">Cancel Editing</a></button>
                 </td>
             </tr>
         </tbody>
