@@ -1,0 +1,76 @@
+.wd-kanbas-navigation {
+    background-color: black;
+    list-style: none;
+    padding: 0px;  margin: 0px;
+    width: 80px;
+    flex: 1;
+  }
+  .wd-kanbas-navigation li {
+    padding: 10px;     margin-bottom: 10px;
+    font-size: 0.8em;  text-align: center;
+  }
+  .wd-kanbas-navigation li.wd-active {
+    background-color: white;
+  }
+  .wd-kanbas-navigation li.wd-active a {
+    color: red;
+  }
+  .wd-kanbas-navigation a {
+    color: white;
+    text-decoration: none;
+  }
+  .wd-kanbas-navigation a i {
+    color: red;
+    font-size: 2em;
+    margin-bottom: 5px;
+  }
+  
+  .custom-container {
+    width: 90%;
+    margin: 0 auto; 
+  }
+  
+  .custom-container a,
+  .custom-container a i {
+    text-decoration: none;
+    color: red;
+    margin-bottom: 40px;
+    font-size: 20px;
+  }
+  
+  .custom-container i {
+    margin-right: 10px;
+  }
+  
+  .col-left-aligned {
+    text-align: left; 
+  }
+  
+  .col-center-aligned {
+    text-align: center; 
+    flex: 0 0 70%;
+  }
+  
+  .col-right-aligned {
+    text-align: right; 
+  }
+  
+  .mini-screen-close-button {
+    width: 90%;
+    margin: 0 auto; 
+    padding: 10px 0; 
+  }
+  
+  .mini-screen-close-button i {
+    font-size: 1.5em; 
+    color: black;
+  }
+
+  .modules-top-bar {
+    background-color: black; /* Set the background color to black */
+    color: white; /* Set the text color to white */
+}
+
+.modules-top-bar a, .modules-top-bar p {
+    color: white; /* Ensure links and paragraphs inside the modules-top-bar also have white text */
+}
