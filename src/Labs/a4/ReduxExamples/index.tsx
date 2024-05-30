@@ -1,4 +1,5 @@
 import React from 'react';
+import HelloRedux from '../ReduxExamples';
 
 const ReduxExamples = () => {
   return (

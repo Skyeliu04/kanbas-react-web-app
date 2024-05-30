@@ -1,42 +1,40 @@
-import React from "react";
-import ArrayStateVariable from "./ArrayStateVariable";
-import BooleanStateVariables from "./BooleanStateVariables";
-import ClickEvent from "./ClickEvent";
-import Counter from "./Counter";
-import DateStateVariable from "./DateStateVariable";
-import EventObject from "./EventObject";
-import ObjectStateVariable from "./ObjectStateVariable";
-import ParentStateComponent from "./ParentStateComponent";
-import PassingDataOnEvent from "./PassingDataOnEvent";
-import PassingFunctions from "./PassingFunctions";
-import ReduxExamples from "./ReduxExamples";
-import TodoList from "./ReduxExamples/todos/TodoList";
-import StringStateVariables from "./StringStateVariables";
+import React from 'react';
+import ClickEvent from './ClickEvent';
+import EventObject from './EventObject';
+import PassingDataOnEvent from './PassingDataOnEvent';
+import PassingFunctions from './PassingFunctions';
+import Counter from './Counter';
+import BooleanStateVariables from './BooleanStateVariables';
+import StringStateVariables from './StringStateVariables';
+import DateStateVariable from './DateStateVariables';
+import ObjectStateVariable from './ObjectStateVariable';
+import ArrayStateVariable from './ArrayStateVariable';
+import ParentStateComponent from './ParentStateComponent';
+import HelloRedux from './ReduxExamples/HelloRedux';
+import CounterRedux from './ReduxExamples/CounterRedux';
 import AddRedux from './ReduxExamples/AddRedux';
-
 
 const Assignment4 = () => {
   function sayHello() {
-    alert("Hello");
+    alert('Hello');
   }
-
   return (
     <>
       <h1>Assignment 4</h1>
       <AddRedux />
-      <ClickEvent />
-      <PassingDataOnEvent />
-      <PassingFunctions theFunction={sayHello} />
-      <EventObject />
-      <Counter />
-      <BooleanStateVariables />
-      <StringStateVariables />
-      <DateStateVariable />
-      <ObjectStateVariable />
-      <ArrayStateVariable />
+      <CounterRedux />
+      <HelloRedux />
       <ParentStateComponent />
-      <ReduxExamples />
-      <TodoList />
+      <ArrayStateVariable />
+      <ObjectStateVariable />
+      <DateStateVariable />
+      <StringStateVariables />
+      <BooleanStateVariables />
+      <Counter />
+      <EventObject />
+      <PassingFunctions theFunction={sayHello} />
+      <PassingDataOnEvent />
+      <ClickEvent />
     </>
   );
 };

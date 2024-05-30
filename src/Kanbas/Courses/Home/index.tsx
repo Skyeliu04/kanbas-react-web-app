@@ -1,14 +1,25 @@
-import ModuleList from "../Modules/List";
-import CourseStatus from "./CourseStatus";
+import ModuleList from '../Modules/List';
+import Status from './Status';
 
 function Home() {
   return (
-    <div className="container-fluid d-flex flex-row full-width-div">
-      <div className="d-flex flex-row w-100">
-        <ModuleList />
-        <CourseStatus />
+    <>
+      <div className="d-flex">
+        {/* <!-- course modules --> */}
+        <div className="col-9 wd-course-home-modules">
+          <h2>Home</h2>
+          <ModuleList />
+        </div>
+        {/* <!-- course status --> */}
+        <div
+          className="flex-fill me-2 d-none d-lg-block wd-course-status"
+          style={{ marginLeft: '30px' }}
+        >
+          <Status />
+        </div>
       </div>
-    </div>
+    </>
   );
 }
+
 export default Home;

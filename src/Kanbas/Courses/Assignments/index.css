@@ -1,60 +1,53 @@
-.wd-modules,
-.wd-modules * {
-  border-radius: 0%;
-  border: none;
-  margin: 0px;
-  padding: 0px;
+.kanbas-courses-assignments .assignments-breadcrumb {
+  margin: 25px;
 }
-.wd-modules {
-  margin: 5px;
-}
-.wd-modules > li {
-  background-color: lightgray;
-  border: 1px solid gray !important;
-  border-left: none !important;
-}
-.wd-modules > li > div {
-  padding: 6px;
-  border-left: 1px solid gray !important;
-}
-.wd-modules > li > ul > li {
-  padding: 5px;
-  border-top: 1px solid gray !important;
-  border-left: 4px solid green;
-}
-.wd-modules > li {
-  margin-bottom: 20px;
-}
-.small-list-item {
-  padding-right: 15px;
-}
-.small-list-group {
-  list-style: none;
-}
-.small-list-group li {
-  border-top: 1px solid grey;
-}
-.small-list-group a {
-  text-decoration: none;
+.kanbas-courses-assignments .assignments-breadcrumb li:nth-child(2) {
+  margin-left: 20px;
   color: red;
 }
-.wd-nav-icon {
-  color: white;
-  margin: 10px;
-}
-.wd-nav-text {
-  color: white;
-}
-.wd-nav-navigation {
-  text-decoration: none;
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-.wd-nav-navigation a {
+
+.kanbas-courses-assignments .assignments-breadcrumb i {
+  margin-top: 2px;
   color: red;
 }
-.wd-assignment-link {
+
+.assignment-list-group-item-icons {
+  width: 5%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.assignment-list-group-item-desc {
+  color: gray;
+  font-size: 14px;
+}
+
+.assignments-name {
+  text-decoration: none;
   color: black;
+}
+
+.offcanvas-full-screen {
+  position: fixed;
+  z-index: 1;
+  transition: -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  background: #0a0a0a;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-transform: translateY(-100%);
+  -ms-transform: translateY(-100%);
+  transform: translateY(-100%);
+  overflow-y: auto;
+}
+
+.offcanvas-full-screen .offcanvas-top-row {
+  color: red;
   text-decoration: none;
 }

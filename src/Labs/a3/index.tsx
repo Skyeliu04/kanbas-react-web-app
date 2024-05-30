@@ -1,4 +1,4 @@
-import JavaScript from "./JavaScript";
+import JavaScript from './JavaScript';
 import Classes from './Classes';
 import Styles from './Styles';
 import PathParameters from './routing/PathParameters';
@@ -7,11 +7,21 @@ import Highlight from './Highlight';
 import Add from './Add';
 import TodoItem from './todos/TodoItem';
 import TodoList from './todos/TodoList';
+import { useSelector } from 'react-redux';
+import { LabState } from '../store';
 
 function Assignment3() {
+  const { todos } = useSelector((state: LabState) => state.todosReducer);
   return (
-    <div className= "container">
+    <div>
       <h1>Assignment 3</h1>
+      <ul className="list-group">
+        {todos.map((todo) => (
+          <li className="list-group-item" key={todo.id}>
+            {todo.title}
+          </li>
+        ))}
+      </ul>
       <TodoItem />
       <TodoList />
       <ConditionalOutput />
@@ -29,4 +39,5 @@ function Assignment3() {
     </div>
   );
 }
+
 export default Assignment3;

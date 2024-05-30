@@ -1,135 +1,108 @@
-import { assignments, enrollments, grades, users } from "../../Database";
-import { Link, useParams } from "react-router-dom";
-import "./index.css";
-import {
-  FaFileImport,
-  FaFileExport,
-  FaEllipsisV,
-  FaSearch,
-  FaCaretDown,
-  FaFilter,
-} from "react-icons/fa";
+import db from '../../Database';
+import { useParams } from 'react-router-dom';
+import { FaDownload, FaUpload } from 'react-icons/fa';
+import { FaGear } from 'react-icons/fa6';
 
 function Grades() {
   const { courseId } = useParams();
-  const as = assignments.filter((assignment) => assignment.course === courseId);
-  const es = enrollments.filter((enrollment) => enrollment.course === courseId);
-
+  const as = db.assignments.filter(
+    (assignment) => assignment.course === courseId
+  );
+  const es = db.enrollments.filter(
+    (enrollment) => enrollment.course === courseId
+  );
   return (
-    <div className="container-fluid">
-      <div className="row m-2">
-        <div className="col">
-          <div className="float-end">
-            <button className="btn btn-light m-1">
-              <FaFileImport className="me-2" />
-              <span className="wd-grades-span">Import</span>
-            </button>
-            <button
-              className="btn btn-light dropdown-toggle m-1"
-              type="button"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              <FaFileExport className="me-2" />
-              <span className="wd-grades-span">Export</span>
-            </button>
-            <ul className="dropdown-menu">
-              <li>
-                <Link className="dropdown-item active" to={""}>
-                  Export
-                </Link>
-              </li>
-            </ul>
-            <button className="btn btn-light m-1">
-              <FaEllipsisV />
-            </button>
-          </div>
+    <div>
+      <div className="col-11">
+        <h1>Grades</h1>
+        <div className="float-end">
+          <button
+            style={{ marginRight: '10px' }}
+            type="button"
+            className="btn btn-secondary"
+          >
+            <FaDownload /> Import
+          </button>
+          <button
+            style={{ marginRight: '10px' }}
+            className="btn btn-secondary dropdown-toggle"
+            type="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <FaUpload /> Export
+          </button>
+          <ul className="dropdown-menu">
+            <li>
+              <a className="dropdown-item">Action</a>
+            </li>
+          </ul>
+          <button type="button" className="btn btn-secondary">
+            <FaGear />
+          </button>
         </div>
-      </div>
-
-      <div className="row m-2">
-        <div className="col-6">
-          <div>Student Names</div>
-          <div className="input-group mb-3">
-            <span className="input-group-text">
-              <FaSearch />
-            </span>
+        <br />
+        <br />
+        <div className="row mb-3">
+          <div className="col-6">
+            <label className="form-label">Student Names</label>
             <input
-              type="search"
+              type="text"
               className="form-control"
               placeholder="Search Students"
             />
-            <span className="input-group-text">
-              <FaCaretDown />
-            </span>
           </div>
-        </div>
-        <div className="col-6">
-          <div>Assignment Names</div>
-          <div className="input-group mb-3">
-            <span className="input-group-text">
-              <FaSearch />
-            </span>
+          <div className="col-6">
+            <label className="form-label">Assignment Names</label>
             <input
-              type="search"
+              type="text"
               className="form-control"
               placeholder="Search Assignments"
             />
-            <span className="input-group-text">
-              <FaCaretDown />
-            </span>
           </div>
         </div>
-      </div>
-
-      <div className="row m-2">
-        <button className="btn btn-light m-2 col-auto">
-          <FaFilter className="me-2" />
-          <span className="wd-grades-span">Apply Filters</span>
-        </button>
-      </div>
-
-      <div className="row m-2">
-        <div className="col">
-          <div className="table-responsive wd-grades-table">
-            <table
-              className="table table-striped w-100 text-center table-responsive wd-grades-table-layout"
-              border={1}
-            >
-              <thead>
+        <div className="mb-3">
+          <button type="button" className="btn btn-secondary">
+            <i className="fa fa-filter"></i> Apply Filters
+          </button>
+        </div>
+        <div className="table-responsive">
+          <table className="table table-striped table-bordered">
+            <thead className="table-secondary">
+              <tr className="table-columns-center">
                 <th>Student Name</th>
                 {as.map((assignment) => (
-                  <th key={assignment.title}>{assignment.title}</th>
+                  <th className="text-center">{assignment.title}</th>
                 ))}
-              </thead>
-              <tbody>
-                {es.map((enrollment) => {
-                  const user = users.find(
-                    (user) => user._id === enrollment.user
-                  );
-                  return (
-                    <tr key={enrollment.user}>
-                      <td>
-                        {user?.firstName} {user?.lastName}
-                      </td>
-                      {assignments.map((assignment) => {
-                        const grade = grades.find(
-                          (grade) =>
-                            grade.student === enrollment.user &&
-                            grade.assignment === assignment._id
-                        );
-                        if (grade) {
-                          return <td>{grade?.grade}</td>;
-                        } else {
-                          return null;
-                        }
-                      })}
-                    </tr>
-                  );
-                })}
-              </tbody>
-            </table>
-          </div>
+              </tr>
+            </thead>
+            <tbody>
+              {es.map((enrollment) => {
+                const user = db.users.find(
+                  (user) => user._id === enrollment.user
+                );
+                console.log(user);
+                return (
+                  <tr>
+                    <td style={{ color: 'red' }}>
+                      {user?.firstName} {user?.lastName}
+                    </td>
+                    {db.assignments.map((assignment) => {
+                      const grade = db.grades.find(
+                        (grade) =>
+                          grade.student === enrollment.user &&
+                          grade.assignment === assignment._id
+                      );
+                      console.log(grade);
+                      return (
+                        <td className="text-center">{grade?.grade || ''}</td>
+                      );
+                    })}
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
         </div>
       </div>
     </div>

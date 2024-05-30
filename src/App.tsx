@@ -1,16 +1,15 @@
-import React from "react";
-import "./App.css";
-import "bootstrap/dist/css/bootstrap.min.css";
-import Labs from "./Labs";
-import HelloWorld from "./Labs/a3/HelloWorld";
-import Kanbas from "./Kanbas";
-// import Courses from "./Kanbas/Courses";
-import { HashRouter, Navigate, Route, Routes } from "react-router-dom";
+import Labs from './Labs';
+import HelloWorld from './Labs/a3/HelloWorld';
+import Kanbas from './Kanbas';
+import { HashRouter } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router';
+
+import './App.css';
 
 function App() {
   return (
     <HashRouter>
-      <div id="root">
+      <div>
         <Routes>
           <Route path="/" element={<Navigate to="/Labs" />} />
           <Route path="/Labs/*" element={<Labs />} />

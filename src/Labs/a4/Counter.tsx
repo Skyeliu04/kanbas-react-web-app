@@ -17,7 +17,7 @@ function Counter() {
         }}
       >
         Down
-      </button> 
+      </button>
     </div>
   );
 }

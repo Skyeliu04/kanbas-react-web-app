@@ -14,7 +14,7 @@ function EventObject() {
         onClick={(e) => handleClick(e)}
         className="btn btn-primary"
       >
-        Display Event Object
+        Display Event Objet
       </button>
       <pre>{JSON.stringify(event, null, 2)}</pre>
     </div>
