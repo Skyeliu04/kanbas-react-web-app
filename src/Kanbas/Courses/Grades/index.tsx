@@ -1,5 +1,5 @@
-import { assignments, enrollments, grades, users } from "../../Database";
-import { useParams } from "react-router-dom";
+import { assignments, enrollments, grades, users } from '../../Database';
+import { useParams } from 'react-router-dom';
 import { FaDownload, FaUpload } from 'react-icons/fa';
 import { FaGear } from 'react-icons/fa6';
 
@@ -82,7 +82,8 @@ function Grades() {
                       {user?.firstName} {user?.lastName}
                     </td>
                     {assignments.map((assignment) => {
-                      const grade = grades.find((grade) =>
+                      const grade = grades.find(
+                        (grade) =>
                           grade.student === enrollment.user &&
                           grade.assignment === assignment._id
                       );

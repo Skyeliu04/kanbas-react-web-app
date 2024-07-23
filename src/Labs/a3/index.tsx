@@ -1,4 +1,4 @@
-import JavaScript from "./JavaScript";
+import JavaScript from './JavaScript';
 import Classes from './Classes';
 import Styles from './Styles';
 import PathParameters from './routing/PathParameters';
@@ -10,7 +10,7 @@ import TodoList from './todos/TodoList';
 
 function Assignment3() {
   return (
-    <div className= "container">
+    <div>
       <h1>Assignment 3</h1>
       <TodoItem />
       <TodoList />
@@ -29,4 +29,5 @@ function Assignment3() {
     </div>
   );
 }
+
 export default Assignment3;

@@ -12,7 +12,7 @@
 
 .wd-modules .wd-modules-parent {
   padding: 15px;
-} 
+}
 
 .wd-modules > li {
   background-color: lightgray;
@@ -28,7 +28,7 @@
 .wd-modules > li > ul > li {
   padding: 5px;
   border-top: 1px solid gray !important;
-  border-left: 2px solid green;
+  border-left: 4px solid green;
 }
 
 .wd-modules > li {
