@@ -30,7 +30,7 @@ function Grades() {
           </button>
           <ul className="dropdown-menu">
             <li>
-              <a className="dropdown-item">Action</a>
+              <button type="button" className="dropdown-item">Action</button>
             </li>
           </ul>
           <button type="button" className="btn btn-secondary">
